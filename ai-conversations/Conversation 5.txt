@@ -1,0 +1,30 @@
+Tool: ChatGPT  
+Date: 2025-04-19
+----------------------------------
+
+Me: How do I store my API key securely in the notebook?
+
+AI: You can use environment variables with `.env` and `python-dotenv`:
+
+1. Create a `.env` file:
+```
+OPENWEATHER_API_KEY=your_key_here
+```
+
+2. Load it in your notebook:
+
+```python
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+API_KEY = os.getenv("OPENWEATHER_API_KEY")
+```
+
+Me: Will this work in Google Colab?
+
+AI: Not directly — in Colab, use `os.environ` or prompt the user manually:
+
+```python
+import os
+API_KEY = os.environ.get("OPENWEATHER_API_KEY") or input("Enter API key: ")
