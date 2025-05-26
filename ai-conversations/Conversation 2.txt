@@ -1,0 +1,33 @@
+Tool: ChatGPT  
+Date: 2025-04-16
+----------------------------------
+
+Me: I want to plot the temperature forecast for the next 5 days. Any tips?
+
+AI: Use the 5-day/3-hour forecast endpoint (`/forecast`) and matplotlib. Here's a starting point:
+
+```python
+def get_forecast(city):
+    url = f"http://api.openweathermap.org/data/2.5/forecast?q={city}&appid={API_KEY}&units=metric"
+    data = requests.get(url).json()
+    temps = [item['main']['temp'] for item in data['list'][::8]]
+    dates = [item['dt_txt'] for item in data['list'][::8]]
+    return dates, temps
+```
+
+Me: How do I visualize it?
+
+AI:
+
+```python
+import matplotlib.pyplot as plt
+
+dates, temps = get_forecast("Melbourne")
+plt.plot(dates, temps, marker='o')
+plt.title("5-Day Temperature Forecast")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+```
+
+Me: This is perfect. Thank you!
