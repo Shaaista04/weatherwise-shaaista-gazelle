@@ -1,0 +1,27 @@
+Tool: ChatGPT  
+Date: 2025-04-17
+----------------------------------
+
+Me: I want users to ask questions like “Will it rain tomorrow?” and get answers.
+
+AI: You can write a basic natural language matcher. Example:
+
+```python
+def answer_weather_question(question, forecast_data):
+    question = question.lower()
+    if "rain" in question:
+        for item in forecast_data['list']:
+            if "rain" in item['weather'][0]['main'].lower():
+                return "Yes, it might rain."
+        return "No rain expected."
+    return "Sorry, I didn’t understand the question."
+```
+
+Me: What if the user asks about temperature?
+
+AI: Add another condition:
+
+```python
+if "temperature" in question:
+    return f"Temperature will be around {forecast_data['list'][0]['main']['temp']}°C"
+```
