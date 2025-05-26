@@ -1,0 +1,20 @@
+Tool: GitHub Copilot  
+Date: 2025-04-18
+----------------------------------
+
+Me: (typed in code editor) def get_humidity(city):
+
+Copilot (suggestion):  
+```python
+url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
+response = requests.get(url)
+data = response.json()
+return data['main']['humidity']
+```
+
+Me: Added that — works well. Now writing a function to detect extreme temperatures.
+
+Copilot (suggestion):  
+```python
+def is_extreme_temp(temp):
+    return temp < 0 or temp > 35
