@@ -15,6 +15,7 @@ def get_forecast(city):
     return dates, temps
 ```
 
+
 Me: How do I visualize it?
 
 AI:
@@ -29,5 +30,6 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 ```
+
 
 Me: This is perfect. Thank you!
