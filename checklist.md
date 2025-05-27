@@ -30,11 +30,11 @@ Use this checklist to track your progress and ensure your Weather Advisor projec
 
 ## Visualisation Component
 
-- [ ] Implements at least 2 different visualisation types
-- [ ] All visualisations have proper titles, labels, and legends
-- [ ] Visualisations are readable and use appropriate colors
+- [ done] Implements at least 2 different visualisation types
+- [ done] All visualisations have proper titles, labels, and legends
+- [done ] Visualisations are readable and use appropriate colors
 - [ ] Handles edge cases (e.g., missing data, extreme values)
-- [ ] Visualisations are relevant to the data being displayed
+- [done ] Visualisations are relevant to the data being displayed
 
 ## Natural Language Interface
 
